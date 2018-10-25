@@ -7,4 +7,10 @@ public void draw()
 {
   spaceX.show();
 }
-
+public void keyPressed()
+{
+	if (key == '8')
+	{
+		spaceX.accelerate(1);
+	}
+}
