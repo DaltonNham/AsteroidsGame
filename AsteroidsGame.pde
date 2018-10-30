@@ -1,13 +1,23 @@
 Spaceship spaceX;
+Star [] cosmos;
 public void setup() 
 {
 	size(300,300);
   //your code here
   spaceX = new Spaceship();
+  cosmos = new Star[100];
+  for (int i = 0; i < cosmos.length; i++)
+  {
+  	cosmos[i] = new Star();
+  }
 }
 public void draw() 
 {
 	background(0);
+	for (int i = 0; i < cosmos.length; i++)
+	{
+		cosmos[i].show();
+	}
 	spaceX.show();
 	spaceX.move();
 }
