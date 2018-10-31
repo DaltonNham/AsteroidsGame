@@ -3,8 +3,8 @@ class Star //note that this class does NOT extend Floater
 	private int starX, starY;
   public Star()
   {
-  	starX = ((int)(Math.random()*301));
-  	starY = ((int)(Math.random()*301));
+  	starX = ((int)(Math.random()*501));
+  	starY = ((int)(Math.random()*501));
   }
   public void show()
   {
