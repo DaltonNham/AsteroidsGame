@@ -7,7 +7,7 @@ public void setup()
   //your code here
   spaceX = new Spaceship();
   cosmos = new Star[250];
-  ceres = new Asteroid[20];
+  ceres = new Asteroid[15];
   for (int i = 0; i < cosmos.length; i++)
   {
   	cosmos[i] = new Star();
@@ -27,7 +27,6 @@ public void draw()
 	for (int j = 0; j < ceres.length; j++)
 	{
 		ceres[j].show();
-		ceres[j].turn(ceres[j].astRotate);
 		ceres[j].move();
 	}
 	spaceX.show();
