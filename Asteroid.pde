@@ -19,18 +19,6 @@ class Asteroid extends Floater
   		yCorners[4] = -((int)(Math.random()*6)+5);
   		xCorners[5] = -((int)(Math.random()*6)+5);
   		yCorners[5] = -((int)(Math.random()*6)+5);
-  		//xCorners[0] = -9;
-  		//yCorners[0] = 0;
-  		//xCorners[1] = -3;
-  		//yCorners[1] = 6;
-  		//xCorners[2] = 3;
-  		//yCorners[2] = 6;
-  		//xCorners[3] = 9;
-  		//yCorners[3] = 0;
-  		//xCorners[4] = 3;
-  		//yCorners[4] = -6;
-  		//xCorners[5] = -3;
-  		//yCorners[5] = -6;
   		luck = ((int)(Math.random()*2));
 		if (luck == 1)
 		{
@@ -51,6 +39,10 @@ class Asteroid extends Floater
 	{
 		turn(astRotate);
 		super.move();
+	}
+	public void show()
+	{
+		super.show();
 	}
 	public void setX(int x){myCenterX = x;}
   	public int getX(){return (int)myCenterX;}
