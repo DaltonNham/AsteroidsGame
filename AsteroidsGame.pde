@@ -46,6 +46,7 @@ public void keyPressed()
 	{
 		spaceX.turn(-5);
 	}
+
 	if (key == 'w')
 	{
 		spaceX.accelerate(.1);
@@ -61,4 +62,5 @@ public void keyPressed()
 		spaceX.setPointDirection(0);
 		spaceX.setPointDirection((int)(Math.random()*361));
 	}
+
 }
