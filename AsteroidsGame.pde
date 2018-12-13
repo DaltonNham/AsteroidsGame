@@ -1,6 +1,7 @@
 Spaceship spaceX;
 Star [] cosmos;
 ArrayList <Asteroid> ceres;
+ArrayList <Bullet> lazer = new ArrayList <Bullet>();
 public void setup() 
 {
 	size(500,500);
@@ -16,7 +17,6 @@ public void setup()
   {
   	ceres.add(new Asteroid());
   }
-
 }
 public void draw() 
 {
@@ -32,6 +32,31 @@ public void draw()
 		float d = dist(spaceX.getX(), spaceX.getY(), ceres.get(j).getX(), ceres.get(j).getY());
 		if (d < 15)
 			ceres.remove(j);
+	}
+	for (int k = 0; k <= lazer.size() - 1; k++)
+	{
+		lazer.get(k).show();
+		lazer.get(k).move();
+		if (lazer.get(k).getX() > width || lazer.get(k).getX() < 0)
+		{
+			lazer.remove(k);
+			break;
+		}
+		else if (lazer.get(k).getY() > height || lazer.get(k).getY() < 0)
+		{
+			lazer.remove(k);
+			break;
+		}
+		for (int l = ceres.size() - 1; l >= 0; l--)
+		{
+			float dd = dist(lazer.get(k).getX(), lazer.get(k).getY(), ceres.get(l).getX(), ceres.get(l).getY());
+			if (dd < 10)
+			{
+				ceres.remove(l);
+				lazer.remove(k);
+				break;
+			}
+		}
 	}
 	spaceX.show();
 	spaceX.move();
@@ -62,5 +87,8 @@ public void keyPressed()
 		spaceX.setPointDirection(0);
 		spaceX.setPointDirection((int)(Math.random()*361));
 	}
-
+	if (key == ' ')
+	{
+		lazer.add(new Bullet(spaceX));
+	}
 }

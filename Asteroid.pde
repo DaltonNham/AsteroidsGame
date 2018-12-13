@@ -40,10 +40,10 @@ class Asteroid extends Floater
 		turn(astRotate);
 		super.move();
 	}
-	public void show()
-	{
-		super.show();
-	}
+	//public void show()
+	//{
+	//	super.show();
+	//}
 	public void setX(int x){myCenterX = x;}
   	public int getX(){return (int)myCenterX;}
   	public void setY(int y){myCenterY = y;}
